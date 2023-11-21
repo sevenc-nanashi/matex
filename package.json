@@ -1,7 +1,7 @@
 {
   "name": "matex",
   "version": "1.0.0",
-  "description": "",
+  "description": "Merge 2 Material Icons",
   "type": "module",
   "bin": "dist/index.js",
   "scripts": {
@@ -11,8 +11,14 @@
   "files": [
     "dist"
   ],
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sevenc-nanashi/matex"
+  },
+  "author": "sevenc-nanashi",
   "license": "ISC",
   "devDependencies": {
     "@tsconfig/node18": "18.2.2",
