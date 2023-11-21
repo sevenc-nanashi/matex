@@ -7,7 +7,7 @@ Matex is a tool to merge 2 material icons to create icon like [Edit Note](https:
 1. Install this package:
 
 ```bash
-npm install matex
+npm install @sevenc-nanashi/matex
 ```
 
 2. Write recipe file:
@@ -23,7 +23,7 @@ single.svg: check + shopping_cart
 3. Run matex:
 
 ```bash
-$ npx matex --recipe matex.yml --output public
+$ npx @sevenc-nanashi/matex --recipe matex.yml --output public
 ```
 
 ## License
