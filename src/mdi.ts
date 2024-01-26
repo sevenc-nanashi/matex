@@ -5,6 +5,7 @@ import os from "node:os";
 import consola from "consola";
 import semver from "semver";
 
+export type Style = "filled" | "outlined" | "round" | "sharp" | "twotone";
 const home = os.homedir();
 if (!home) {
   throw new Error("Failed to get home directory");
@@ -54,7 +55,7 @@ export const getPath = async (): Promise<{
 
 export const findIcon = async (
   basePath: string,
-  style: "filled" | "outlined" | "round" | "sharp" | "twotone",
+  style: Style,
   name: string
 ): Promise<string | undefined> => {
   const iconPath = path.join(basePath, style, `${name}.svg`);

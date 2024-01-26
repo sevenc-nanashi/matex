@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const ingredient = /^([a-z_-]+) *\+ *([a-z_-]+) *$/i;
+export const ingredient = /^(?:(filled|outlined|round|sharp|twotone):)?([a-z_-]+) *\+ *(?:(filled|outlined|round|sharp|twotone):)?([a-z_-]+) *$/i;
 export const recipeSchema = z.record(
   z.record(z.string().regex(ingredient)).or(z.string().regex(ingredient))
 );

@@ -49,20 +49,29 @@ const main = async () => {
         : recipes
     )) {
       i++;
-      const [, base, sub] = ingredients.match(ingredient) ?? [];
+      const [, baseStyle, baseName, subStyle, subName] =
+        ingredients.match(ingredient) ?? [];
       if (name === "_") {
-        consola.info(`  ${base} + ${sub}`);
+        consola.info(`  ${baseName} + ${subName}`);
       } else {
-        consola.info(`  ${name}: ${base} + ${sub}`);
+        consola.info(`  ${name}: ${baseName} + ${subName}`);
       }
-      const basePath = await mdi.findIcon(mdiPath.path, "outlined", base);
-      const subPath = await mdi.findIcon(mdiPath.path, "filled", sub);
+      const basePath = await mdi.findIcon(
+        mdiPath.path,
+        (baseStyle || "outlined") as mdi.Style,
+        baseName
+      );
+      const subPath = await mdi.findIcon(
+        mdiPath.path,
+        (subStyle || "filled") as mdi.Style,
+        subName
+      );
       if (!basePath) {
-        consola.error(`Icon not found: ${base} (base icon in #${i})`);
+        consola.error(`Icon not found: ${baseName} (base icon in #${i})`);
         return 1;
       }
       if (!subPath) {
-        consola.error(`Icon not found: ${sub} (sub icon in #${i})`);
+        consola.error(`Icon not found: ${subName} (sub icon in #${i})`);
         return 1;
       }
 
