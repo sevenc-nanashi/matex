@@ -1,6 +1,6 @@
 {
   "name": "@sevenc-nanashi/matex",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Merge 2 Material Icons",
   "type": "module",
   "bin": "dist/index.js",
